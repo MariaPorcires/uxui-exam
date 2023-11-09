@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 11em;
+  margin-top: 12em;
 }
 
 .main__section {
@@ -13,13 +13,12 @@
   border: none;
   opacity: 60%;
   width: 640px;
-  height: 150px;
 }
 
 .main__title {
-  font-size: 40px;
+  font-size: 32px;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
   background: none;
   text-align: center;
   font-family: "Inknut Antiqua", serif;
