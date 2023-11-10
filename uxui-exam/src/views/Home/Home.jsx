@@ -10,7 +10,7 @@ function Home() {
         </section>
         <section className="flex">
           <section className="links">
-            <button className="button">ABOUT</button>
+            <button className="button">ABOUT ME</button>
             <button className="button">PORTFOLIO</button>
             <button className="button">CONTACT</button>
           </section>

@@ -1,19 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Cairo:wght@300;500;600;700;800;900&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700&family=Karma:wght@300;400;500;600;700&family=Major+Mono+Display&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800&family=PT+Mono&display=swap");
 
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main__background {
-  margin-top: 1em;
+  margin-top: 2em;
+  background-image: url("../../assets/lake.jpg");
+  background-size: cover;
+  width: 70%;
+  height: 750px;
+  border-radius: 20px;
 }
 
 .main__section {
   margin-top: 4em;
   background: rgb(255, 255, 255);
   border: none;
-  opacity: 60%;
+  opacity: 70%;
   width: 680px;
-  margin-left: 6em;
 }
 
 .main__title {
@@ -42,31 +50,34 @@
 }
 
 .button {
-  font-size: 35px;
+  font-size: 33px;
   font-weight: 500;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 3px;
-  margin: 1em;
-  padding: 0.3em 0.5em;
+  margin: 0.5em;
+  padding: 0.4em 0.6em;
   border-radius: 5px;
   cursor: pointer;
   border: 1px solid black;
+  opacity: 75%;
+  transition: all 0.5s;
+  border: none;
 }
 
 .button:hover {
   color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
+  border: none;
+  background-color: transparent;
 }
 
 .button:checked {
   color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
+  border: none;
+  background-color: transparent;
 }
 
 .button:focus {
   color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
+  border: none;
+  background-color: transparent;
 }
