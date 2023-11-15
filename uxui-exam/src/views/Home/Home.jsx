@@ -29,3 +29,5 @@ function Home() {
 }
 
 export default Home;
+
+//lägg till alt till varje bild
