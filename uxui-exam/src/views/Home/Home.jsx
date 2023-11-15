@@ -8,6 +8,10 @@ function Home() {
     navigate("/about");
   }
 
+  function handleContactClick() {
+    navigate("/contact");
+  }
+
   return (
     <main className="main">
       <section className="main__background">
@@ -20,7 +24,9 @@ function Home() {
               ABOUT ME
             </button>
             <button className="button">PORTFOLIO</button>
-            <button className="button">CONTACT</button>
+            <button className="button" onClick={handleContactClick}>
+              CONTACT
+            </button>
           </section>
         </section>
       </section>

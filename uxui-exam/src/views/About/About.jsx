@@ -1,5 +1,4 @@
 import "./About.css";
-import mary from "../../assets/mary.jpg";
 
 function About() {
   return (
@@ -16,9 +15,11 @@ function About() {
             If you want to know more about me and what I do, or if you need a
             photographer, feel free to contact me and we can arrange something.
           </p>
+          Contact
         </section>
 
         <section className="about__imgcontainer">
+          <p>HOME > About me</p>
           <video className="about__video" controls>
             <source src="src\assets\video.mp4" type="video/mp4" />
           </video>
