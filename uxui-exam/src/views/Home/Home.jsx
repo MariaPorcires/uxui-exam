@@ -8,6 +8,10 @@ function Home() {
     navigate("/about");
   }
 
+  function handlePortfolioClick() {
+    navigate("/portfolio");
+  }
+
   function handleContactClick() {
     navigate("/contact");
   }
@@ -23,7 +27,9 @@ function Home() {
             <button className="button" onClick={handleAboutMeClick}>
               ABOUT ME
             </button>
-            <button className="button">PORTFOLIO</button>
+            <button className="button" onClick={handlePortfolioClick}>
+              PORTFOLIO
+            </button>
             <button className="button" onClick={handleContactClick}>
               CONTACT
             </button>

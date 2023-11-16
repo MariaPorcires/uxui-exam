@@ -5,8 +5,9 @@ function Contact() {
     <main className="contact__main">
       HOME > Contact
       <section className="contact__inputs">
-        <p>
-          contact me for more info and I will get back to you as soon as posible
+        <p className="contact__text">
+          Contact me for more information and I will get back to you as soon as
+          possible.
         </p>
         <label htmlFor="name">Name</label>
         <input
