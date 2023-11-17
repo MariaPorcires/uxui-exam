@@ -1,0 +1,22 @@
+.portfolio__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4px auto;
+}
+
+.portfolio__images {
+}
+
+.portfolio__images img {
+  width: 300px;
+  margin: 1rem;
+}

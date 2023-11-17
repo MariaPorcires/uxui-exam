@@ -10,6 +10,7 @@
 .contact__inputs {
   font-family: "Inknut Antiqua", serif;
   background-color: #f2f2f2;
+  box-shadow: 5px 10px 18px #888888;
   border-radius: 30px;
   width: 500px;
   display: flex;
@@ -21,8 +22,6 @@
 }
 
 .contact__text {
-  margin-top: -1rem;
-  margin-bottom: 2rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
