@@ -1,6 +1,6 @@
 import "./Contact.css";
-import { useState } from "react";
-import { useBeforeunload } from "react-beforeunload";
+import { useState, useEffect } from "react";
+//import { useBeforeUnload } from "react-router-dom";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -45,13 +45,29 @@ function Contact() {
     }
   };
 
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      const message =
+        "Are you sure you want to leave? Your changes may not be saved.";
+      event.returnValue = message;
+      console.log(message);
+      return message;
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <main className="contact__main">
       HOME > Contact
       <p className="contact__text">Contact me for more information.</p>
       <form className="contact__inputs" onSubmit={handleSubmit}>
         {showWarning && (
-          <p className="warning-message">
+          <p className="message-fill">
             Please fill in all fields before submitting the form.
           </p>
         )}
@@ -78,7 +94,7 @@ function Contact() {
           onChange={handleChange}
         />
         {showWarningPhone && (
-          <p className="warning-message">
+          <p className="message-phone">
             Please enter only numbers in the Phone field.
           </p>
         )}
