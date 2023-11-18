@@ -1,6 +1,20 @@
 import "./Contact.css";
+import { useState } from "react";
 
 function Contact() {
+  const [val, setVal] = useState("");
+  const [showWarning, setShowWarning] = useState(false);
+
+  const handleChange = (e) => {
+    const regex = /^[0-9\b]+$/;
+    if (e.target.value === "" || regex.test(e.target.value)) {
+      setVal(e.target.value);
+      setShowWarning(false);
+    } else {
+      setShowWarning(true);
+    }
+  };
+
   return (
     <main className="contact__main">
       HOME > Contact
@@ -22,7 +36,14 @@ function Contact() {
           id="number"
           name="number"
           placeholder="Phone"
+          value={val}
+          onChange={handleChange}
         />
+        {showWarning && (
+          <p className="warning-message">
+            Please enter only numbers in the Phone field.
+          </p>
+        )}
 
         <label htmlFor="e-mail">E-mail</label>
         <input
