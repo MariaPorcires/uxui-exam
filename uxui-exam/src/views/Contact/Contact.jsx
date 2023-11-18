@@ -15,6 +15,15 @@ function Contact() {
           placeholder="Your name"
         />
 
+        <label htmlFor="number">Phone</label>
+        <input
+          className="contact__input"
+          type="text"
+          id="number"
+          name="number"
+          placeholder="Phone"
+        />
+
         <label htmlFor="e-mail">E-mail</label>
         <input
           className="contact__input"
@@ -41,3 +50,5 @@ function Contact() {
 export default Contact;
 
 //skicka vidare till thank you sida
+
+//spara alla värden från input i state - för att ha kvar dem om man reloadar etc
