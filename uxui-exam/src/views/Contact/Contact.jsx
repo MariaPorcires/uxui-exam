@@ -1,12 +1,12 @@
 import "./Contact.css";
 import { useState } from "react";
+import { useBeforeunload } from "react-beforeunload";
 
 function Contact() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
-  //const [val, setVal] = useState("");
   const [showWarningPhone, setShowWarningPhone] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
 
