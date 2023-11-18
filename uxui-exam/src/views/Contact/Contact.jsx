@@ -2,16 +2,46 @@ import "./Contact.css";
 import { useState } from "react";
 
 function Contact() {
-  const [val, setVal] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  //const [val, setVal] = useState("");
+  const [showWarningPhone, setShowWarningPhone] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
 
   const handleChange = (e) => {
     const regex = /^[0-9\b]+$/;
-    if (e.target.value === "" || regex.test(e.target.value)) {
-      setVal(e.target.value);
+    if (e.target.name === "phone") {
+      if (e.target.value === "" || regex.test(e.target.value)) {
+        setPhone(e.target.value);
+        setShowWarningPhone(false);
+      } else {
+        setShowWarningPhone(true);
+      }
+    } else if (e.target.name === "name") {
+      setName(e.target.value);
+    } else if (e.target.name === "e-mail") {
+      setEmail(e.target.value);
+    } else if (e.target.name === "subject") {
+      setSubject(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      name.trim() !== "" &&
+      phone.trim() !== "" &&
+      email.trim() !== "" &&
+      subject.trim() !== ""
+    ) {
+      console.log("Form submitted:", { name, phone, email, subject });
       setShowWarning(false);
     } else {
       setShowWarning(true);
+      console.log("Please fill in all fields.");
     }
   };
 
@@ -19,7 +49,13 @@ function Contact() {
     <main className="contact__main">
       HOME > Contact
       <p className="contact__text">Contact me for more information.</p>
-      <section className="contact__inputs">
+      <form className="contact__inputs" onSubmit={handleSubmit}>
+        {showWarning && (
+          <p className="warning-message">
+            Please fill in all fields before submitting the form.
+          </p>
+        )}
+
         <label htmlFor="name">Name</label>
         <input
           className="contact__input"
@@ -27,19 +63,21 @@ function Contact() {
           id="name"
           name="name"
           placeholder="Your name"
+          value={name}
+          onChange={handleChange}
         />
 
-        <label htmlFor="number">Phone</label>
+        <label htmlFor="phone">Phone</label>
         <input
           className="contact__input"
           type="text"
-          id="number"
-          name="number"
+          id="phone"
+          name="phone"
           placeholder="Phone"
-          value={val}
+          value={phone}
           onChange={handleChange}
         />
-        {showWarning && (
+        {showWarningPhone && (
           <p className="warning-message">
             Please enter only numbers in the Phone field.
           </p>
@@ -52,6 +90,8 @@ function Contact() {
           id="e-mail"
           name="e-mail"
           placeholder="E-mail"
+          value={email}
+          onChange={handleChange}
         />
 
         <label htmlFor="subject">Subject</label>
@@ -60,10 +100,12 @@ function Contact() {
           id="subject"
           name="subject"
           placeholder="Write something.."
+          value={subject}
+          onChange={handleChange}
         />
 
         <input className="contact__submit" type="submit" value="Submit" />
-      </section>
+      </form>
     </main>
   );
 }
