@@ -47,6 +47,14 @@ function Contact() {
   };
 
   useEffect(() => {
+    /*   const handleVisibilityChange = () => {
+      if (document.hidden) {
+        localStorage.setItem("name", name);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("email", email);
+        localStorage.setItem("subject", subject);
+      }
+    }; */
     const handleBeforeUnload = (event) => {
       localStorage.setItem("name", name);
       localStorage.setItem("phone", phone);
@@ -59,9 +67,11 @@ function Contact() {
       return message;
     };
 
+    //document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
+      //document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [name, phone, email, subject]);
