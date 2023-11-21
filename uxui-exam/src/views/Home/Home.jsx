@@ -18,6 +18,7 @@ function Home() {
 
   return (
     <main className="main">
+      <title>Photography by Mary</title>
       <section className="main__background">
         <section className="main__section">
           <h1 className="main__title">Photography by Mary</h1>
@@ -43,3 +44,4 @@ function Home() {
 export default Home;
 
 //lägg till alt till varje bild
+//kolla bakgrund alt

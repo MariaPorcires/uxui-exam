@@ -3,6 +3,7 @@ import "./Portfolio.css";
 function Portfolio() {
   return (
     <div>
+      <title>Portfolio</title>
       <header className="portfolio__header">
         <h1>Portfolio</h1>
       </header>

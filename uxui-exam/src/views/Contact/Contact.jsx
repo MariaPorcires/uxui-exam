@@ -64,6 +64,7 @@ function Contact() {
 
   return (
     <main className="contact__main">
+      <title>Contact</title>
       HOME > Contact
       <p className="contact__text">Contact me for more information.</p>
       <form className="contact__inputs" onSubmit={handleSubmit}>

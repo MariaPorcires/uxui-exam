@@ -3,6 +3,7 @@ import "./About.css";
 function About() {
   return (
     <main className="about">
+      <title>About me</title>
       <section className="about__container">
         <section className="about__text">
           <h1 className="about__title">Mary</h1>
