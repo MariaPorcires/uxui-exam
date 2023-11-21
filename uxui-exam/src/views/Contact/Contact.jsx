@@ -4,10 +4,10 @@ import { useEffect } from "react";
 //import { useBeforeUnload } from "react-router-dom";
 
 function Contact() {
-  const [name, setName] = useState(localStorage.getItem("name") || "");
-  const [phone, setPhone] = useState(localStorage.getItem("phone") || "");
-  const [email, setEmail] = useState(localStorage.getItem("email") || "");
-  const [subject, setSubject] = useState(localStorage.getItem("subject") || "");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [showWarningPhone, setShowWarningPhone] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
 
@@ -47,19 +47,7 @@ function Contact() {
   };
 
   useEffect(() => {
-    /*   const handleVisibilityChange = () => {
-      if (document.hidden) {
-        localStorage.setItem("name", name);
-        localStorage.setItem("phone", phone);
-        localStorage.setItem("email", email);
-        localStorage.setItem("subject", subject);
-      }
-    }; */
     const handleBeforeUnload = (event) => {
-      localStorage.setItem("name", name);
-      localStorage.setItem("phone", phone);
-      localStorage.setItem("email", email);
-      localStorage.setItem("subject", subject);
       const message =
         "Are you sure you want to leave? Your changes may not be saved.";
       event.returnValue = message;
@@ -67,14 +55,12 @@ function Contact() {
       return message;
     };
 
-    //document.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
-      //document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  }, [name, phone, email, subject]);
+  }, []);
 
   return (
     <main className="contact__main">
