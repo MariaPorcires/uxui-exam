@@ -1,9 +1,13 @@
 import "./Contact.css";
-import { useState } from "react";
-import { useEffect } from "react";
-//import { useBeforeUnload } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  unstable_useBlocker as useBlocker,
+  useNavigate,
+} from "react-router-dom";
 
 function Contact() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -40,11 +44,29 @@ function Contact() {
     ) {
       console.log("Form submitted:", { name, phone, email, subject });
       setShowWarning(false);
+      navigate("/formSubmitted");
     } else {
       setShowWarning(true);
       console.log("Please fill in all fields.");
     }
   };
+
+  useBlocker(
+    (tx) => {
+      if (showWarning || (phone !== "" && showWarningPhone)) {
+        const message =
+          "Are you sure you want to leave? Your changes may not be saved.";
+        if (window.confirm(message)) {
+          tx.resolve();
+        } else {
+          tx.abort();
+        }
+      } else {
+        tx.resolve();
+      }
+    },
+    [showWarning, showWarningPhone, phone]
+  );
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -64,7 +86,6 @@ function Contact() {
 
   return (
     <main className="contact__main">
-      <title>Contact</title>
       HOME > Contact
       <p className="contact__text">Contact me for more information.</p>
       <form className="contact__inputs" onSubmit={handleSubmit}>
