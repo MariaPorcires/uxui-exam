@@ -1,13 +1,8 @@
 import "./Contact.css";
-import { useState, useEffect } from "react";
-import {
-  unstable_useBlocker as useBlocker,
-  useNavigate,
-} from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Contact() {
-  const navigate = useNavigate();
-
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -44,29 +39,11 @@ function Contact() {
     ) {
       console.log("Form submitted:", { name, phone, email, subject });
       setShowWarning(false);
-      navigate("/formSubmitted");
     } else {
       setShowWarning(true);
       console.log("Please fill in all fields.");
     }
   };
-
-  useBlocker(
-    (tx) => {
-      if (showWarning || (phone !== "" && showWarningPhone)) {
-        const message =
-          "Are you sure you want to leave? Your changes may not be saved.";
-        if (window.confirm(message)) {
-          tx.resolve();
-        } else {
-          tx.abort();
-        }
-      } else {
-        tx.resolve();
-      }
-    },
-    [showWarning, showWarningPhone, phone]
-  );
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -76,24 +53,22 @@ function Contact() {
       console.log(message);
       return message;
     };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave?";
     };
   }, []);
 
   return (
     <main className="contact__main">
+      <title>Contact</title>
       HOME > Contact
       <p className="contact__text">Contact me for more information.</p>
       <form className="contact__inputs" onSubmit={handleSubmit}>
-        {showWarning && (
+        {/* {showWarning && (
           <p className="message-fill">
             Please fill in all fields before submitting the form.
           </p>
-        )}
+        )} */}
 
         <label htmlFor="name">Name</label>
         <input
@@ -117,9 +92,7 @@ function Contact() {
           onChange={handleChange}
         />
         {showWarningPhone && (
-          <p className="message-phone">
-            Please enter only numbers in the Phone field.
-          </p>
+          <p className="message-phone">Please enter only numbers</p>
         )}
 
         <label htmlFor="e-mail">E-mail</label>
@@ -145,6 +118,11 @@ function Contact() {
 
         <input className="contact__submit" type="submit" value="Submit" />
       </form>
+      {showWarning && (
+        <p className="message-fill">
+          Please fill in all fields before submitting the form.
+        </p>
+      )}
     </main>
   );
 }
