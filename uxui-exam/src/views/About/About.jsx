@@ -50,10 +50,10 @@ function About() {
             srcLang="sve"
             label="Swedish"
           />
-          {/*   <p>
+          <p>
             Här är en <a href="src\assets\video.mp4">länk för att ladda ner</a>{" "}
             videon
-          </p> */}
+          </p>
         </video>
       </section>
     </main>
