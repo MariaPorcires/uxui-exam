@@ -13,22 +13,54 @@ function Contact() {
   const [showWarning, setShowWarning] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    const storedName = localStorage.getItem("contact_name");
+    const storedPhone = localStorage.getItem("contact_phone");
+    const storedEmail = localStorage.getItem("contact_email");
+    const storedSubject = localStorage.getItem("contact_subject");
+
+    if (storedName) setName(storedName);
+    if (storedPhone) setPhone(storedPhone);
+    if (storedEmail) setEmail(storedEmail);
+    if (storedSubject) setSubject(storedSubject);
+
+    const handleBeforeUnload = (event) => {
+      if (name || phone || email || subject) {
+        const message =
+          "Are you sure you want to leave? Your changes may not be saved.";
+        event.returnValue = message;
+        return message;
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [name, phone, email, subject]);
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     const regex = /^[0-9\b]+$/;
-    if (e.target.name === "phone") {
-      if (e.target.value === "" || regex.test(e.target.value)) {
-        setPhone(e.target.value);
+
+    if (name === "phone") {
+      if (value === "" || regex.test(value)) {
+        setPhone(value);
         setShowWarningPhone(false);
       } else {
         setShowWarningPhone(true);
       }
-    } else if (e.target.name === "name") {
-      setName(e.target.value);
-    } else if (e.target.name === "e-mail") {
-      setEmail(e.target.value);
-    } else if (e.target.name === "subject") {
-      setSubject(e.target.value);
+    } else if (name === "name") {
+      setName(value);
+    } else if (name === "e-mail") {
+      setEmail(value);
+    } else if (name === "subject") {
+      setSubject(value);
     }
+
+    localStorage.setItem(`contact_${name}`, value);
   };
 
   const handleSubmit = (e) => {
@@ -43,27 +75,16 @@ function Contact() {
       console.log("Form submitted:", { name, phone, email, subject });
       setShowWarning(false);
       setSubmitted(true);
+
+      localStorage.removeItem("contact_name");
+      localStorage.removeItem("contact_phone");
+      localStorage.removeItem("contact_email");
+      localStorage.removeItem("contact_subject");
     } else {
       setShowWarning(true);
       console.log("Please fill in all fields.");
     }
   };
-
-  useEffect(() => {
-    const handleBeforeUnload = (event) => {
-      const message =
-        "Are you sure you want to leave? Your changes may not be saved.";
-      event.returnValue = message;
-      console.log(message);
-      return message;
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
 
   function backToHome() {
     navigate("/");
@@ -80,7 +101,7 @@ function Contact() {
       </section>
       {submitted && (
         <p className="message__submit">
-          Tack för ditt meddedlande! Jag hör av mig så snart som möjligt!
+          Tack för ditt meddelande! Jag hör av mig så snart som möjligt!
         </p>
       )}
       {showWarning && (
@@ -143,6 +164,4 @@ export default Contact;
 
 //göra färdigt alla länkar
 //responsivitet
-//portfoliosidan, text och alt + länkar
 //video
-//spara alla värden från input i state - för att ha kvar dem om man reloadar etc
