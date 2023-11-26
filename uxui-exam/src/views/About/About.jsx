@@ -14,7 +14,7 @@ function About() {
 
   return (
     <main className="about" role="main">
-      <title>About me</title>
+      <title>Om mig</title>
       <section className="breadcrumbs">
         <article
           className="breadcrumbs__back"
@@ -29,7 +29,7 @@ function About() {
         <h1 className="about__title">Mary</h1>
         <h2 className="about__undertitle">Hobbyfotograf</h2>
         <p className="about__paragraph">
-          Mitt namn är Mary, jag är från Göteborg och kallar mig själv för
+          Mitt namn är Maria, jag är från Göteborg och kallar mig själv för
           hobbyfotograf. Jag har fotograferat hela mitt liv. Jag har en
           förkärlek till det analoga och mörkrumsarbete men har på senare tid
           försökt förhålla mig till den digitala världen. Jag fotograferar allt

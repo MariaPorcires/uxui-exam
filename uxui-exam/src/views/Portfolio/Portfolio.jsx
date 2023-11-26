@@ -21,11 +21,11 @@ function Portfolio() {
         <section
           className="portfolio__images"
           role="img"
-          aria-label="images in portfolio"
+          aria-label="foton i portfolio"
         >
           <img
             src="src\assets\tunnel.jpg"
-            alt="pojke som går i en mörk tunnel, ljuset från tunneln slut syns långt bort."
+            alt="pojke går i en mörk tunnel, ljuset från tunnelns slut syns långt bort."
           />
           <img
             src="src\assets\bad.jpg"

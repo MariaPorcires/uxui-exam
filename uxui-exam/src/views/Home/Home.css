@@ -21,7 +21,7 @@
   background: rgb(255, 255, 255);
   border: none;
   opacity: 70%;
-  width: 680px;
+  width: 510px;
 }
 
 .main__title {
@@ -95,11 +95,11 @@
     background: rgb(255, 255, 255);
     border: none;
     opacity: 70%;
-    width: 400px;
+    width: 350px;
   }
 
   .main__title {
-    font-size: 25px;
+    font-size: 30px;
     color: #050505;
     font-weight: 600;
     background: none;

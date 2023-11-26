@@ -18,10 +18,10 @@ function Home() {
 
   return (
     <main className="main" role="main">
-      <title>Photography by Mary</title>
+      <title>Fotograf Maria</title>
       <section className="main__background">
         <section className="main__section">
-          <h1 className="main__title">Photography by Mary</h1>
+          <h1 className="main__title">Fotograf Maria</h1>
         </section>
         <section className="flex">
           <section className="links" role="navigation">
