@@ -91,10 +91,14 @@ function Contact() {
   }
 
   return (
-    <main className="contact__main">
+    <main className="contact__main" role="main">
       <title>Kontakt</title>
       <section className="breadcrumbs">
-        <article className="breadcrumbs__back" onClick={backToHome}>
+        <article
+          className="breadcrumbs__back"
+          onClick={backToHome}
+          role="button"
+        >
           HEM{" "}
         </article>{" "}
         > Kontakt
@@ -107,7 +111,12 @@ function Contact() {
       {showWarning && (
         <p className="message__fill">Fyll i alla fält i formuläret!</p>
       )}
-      <form className="contact__inputs" onSubmit={handleSubmit}>
+      <form
+        className="contact__inputs"
+        role="form"
+        aria-label="Contact information"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="name">Namn</label>
         <input
           className="contact__input"
@@ -161,7 +170,3 @@ function Contact() {
 }
 
 export default Contact;
-
-//responsivitet
-//video
-//kolla av med skärmläsare!

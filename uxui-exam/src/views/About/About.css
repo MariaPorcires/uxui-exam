@@ -51,3 +51,23 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media (max-width: 850px) {
+  .about__container {
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 300px;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 1rem;
+  }
+
+  .about__video {
+    width: 300px;
+    height: 350px;
+    margin: 2rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    padding: 2rem;
+  }
+}

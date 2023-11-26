@@ -17,14 +17,14 @@ function Home() {
   }
 
   return (
-    <main className="main">
+    <main className="main" role="main">
       <title>Photography by Mary</title>
       <section className="main__background">
         <section className="main__section">
           <h1 className="main__title">Photography by Mary</h1>
         </section>
         <section className="flex">
-          <section className="links">
+          <section className="links" role="navigation">
             <button className="button" onClick={handleAboutMeClick}>
               OM MIG
             </button>

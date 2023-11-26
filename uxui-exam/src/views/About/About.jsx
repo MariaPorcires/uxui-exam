@@ -13,15 +13,19 @@ function About() {
   }
 
   return (
-    <main className="about">
+    <main className="about" role="main">
       <title>About me</title>
       <section className="breadcrumbs">
-        <article className="breadcrumbs__back" onClick={backToHome}>
+        <article
+          className="breadcrumbs__back"
+          onClick={backToHome}
+          role="button"
+        >
           HEM{" "}
         </article>{" "}
         > Om mig
       </section>
-      <section className="about__container">
+      <article role="article" className="about__container">
         <h1 className="about__title">Mary</h1>
         <h2 className="about__undertitle">Hobbyfotograf</h2>
         <p className="about__paragraph">
@@ -36,10 +40,15 @@ function About() {
           Är du intresserad av att göra ett projekt, samarbeta eller är du bara
           i behov av en fotograf så är du välkommen att kontakta mig.
         </p>
-        <article className="contact__link" onClick={contact}>
+        <article
+          role="article"
+          className="contact__link"
+          role="button"
+          onClick={contact}
+        >
           KONTAKT{" "}
         </article>{" "}
-      </section>
+      </article>
 
       <section className="about__imgcontainer">
         <video className="about__video" controls width="700">

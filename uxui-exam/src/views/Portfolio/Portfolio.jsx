@@ -11,14 +11,18 @@ function Portfolio() {
   return (
     <div className="portfolio">
       <title>Portfolio</title>
-      <header className="breadcrumbs">
+      <header className="breadcrumbs" role="heading" aria-level="1">
         <article className="breadcrumbs__back" onClick={backToHome}>
           HEM{" "}
         </article>{" "}
         > Portfolio
       </header>
-      <main className="portfolio__main">
-        <section className="portfolio__images">
+      <main className="portfolio__main" role="main">
+        <section
+          className="portfolio__images"
+          role="img"
+          aria-label="images in portfolio"
+        >
           <img
             src="src\assets\tunnel.jpg"
             alt="pojke som går i en mörk tunnel, ljuset från tunneln slut syns långt bort."
