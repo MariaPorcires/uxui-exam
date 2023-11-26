@@ -42,8 +42,18 @@ function About() {
       </section>
 
       <section className="about__imgcontainer">
-        <video className="about__video" controls>
+        <video className="about__video" controls width="700">
           <source src="src\assets\video.mp4" type="video/mp4" />
+          <track
+            kind="captions"
+            src="src/assets/captions.vtt"
+            srcLang="sve"
+            label="Swedish"
+          />
+          {/*   <p>
+            Här är en <a href="src\assets\video.mp4">länk för att ladda ner</a>{" "}
+            videon
+          </p> */}
         </video>
       </section>
     </main>

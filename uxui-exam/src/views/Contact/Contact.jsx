@@ -162,6 +162,6 @@ function Contact() {
 
 export default Contact;
 
-//göra färdigt alla länkar
 //responsivitet
 //video
+//kolla av med skärmläsare!
