@@ -25,29 +25,29 @@ function Portfolio() {
         >
           <img
             src="src\assets\tunnel.jpg"
-            alt="pojke går i en mörk tunnel, ljuset från tunnelns slut syns långt bort."
+            alt="ett barn går i en mörk tunnel, ljuset från tunnelns slut syns långt bort."
           />
           <img
             src="src\assets\bad.jpg"
-            alt="liten pojke går på vägen i badbyxor och bär på en handduk"
+            alt="litet barn går på vägen i badbyxor och bär på en handduk"
           />
           <img
             src="src\assets\boys.jpg"
-            alt="två pojkar står längst upp på en trappa och pratar"
+            alt="två barn står längst upp på en trappa och pratar"
           />
         </section>
         <section className="portfolio__images">
           <img
             src="src\assets\walk.jpg"
-            alt="två små pojkar går tillsammans och håller varandra i handen, den ena pojken tittar bak"
+            alt="två små barn går tillsammans och håller varandra i handen, den ena pojken tittar bak"
           />
           <img
             src="src\assets\grey.jpg"
-            alt="liten pojke sitter på en ramp, svartvit bild"
+            alt="ett barn sitter på en ramp, svartvit bild"
           />
           <img
             src="src\assets\whitetunnel.JPG"
-            alt="liten pojke sparkar mot väggen i en lång vit tunnel"
+            alt="ett barn sparkar mot väggen i en lång vit tunnel"
           />
         </section>
       </main>
