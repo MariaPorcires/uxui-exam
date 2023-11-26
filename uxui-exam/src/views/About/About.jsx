@@ -61,19 +61,3 @@ function About() {
 }
 
 export default About;
-
-{
-  /* <div>
-<video controls width={700} height={400}>
-  <source type='video/mp4' src='/videos/juicebar-video.mp4' />
-  <track
-    kind='captions'
-    src='/videos/captions.vtt'
-    srcLang='en'
-    label='English'
-  />
-</video>
-</div>
-);
-} */
-}
