@@ -26,7 +26,7 @@ function About() {
         > Om mig
       </section>
       <article role="article" className="about__container">
-        <h1 className="about__title">Mary</h1>
+        <h1 className="about__title">Maria</h1>
         <h2 className="about__undertitle">Hobbyfotograf</h2>
         <p className="about__paragraph">
           Mitt namn är Maria, jag är från Göteborg och kallar mig själv för
