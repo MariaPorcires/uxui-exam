@@ -8,30 +8,21 @@
 }
 
 .about__container {
-  background-color: white;
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  display: grid;
-  max-width: 1000px;
-  height: 650px;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
+  border: 1px solid black;
 
-.about__imgcontainer {
-  border-left: 2px solid lightgrey;
-  padding: 1rem;
-  grid-column: auto / span 1;
-  margin-top: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
 .about__video {
-  width: 480px;
+  width: 600px;
   height: 350px;
-  margin-top: 10rem;
-  margin-left: 1rem;
+  margin: 2rem;
   border-radius: 2rem;
   border: 1px solid black;
+  padding: 2rem;
 }
 
 .about__title {
@@ -40,6 +31,7 @@
   font-family: "Inknut Antiqua", serif;
   color: black;
   margin-bottom: -1.2em;
+  margin-top: -0.5em;
 }
 
 .about__undertitle {
@@ -47,17 +39,16 @@
   font-weight: 300;
   font-size: 28px;
   color: black;
-  margin-bottom: 1em;
 }
 
-.about__text {
+/* .about__text {
   grid-column: auto / span 2;
   margin-top: 1rem;
   font-size: 20px;
 }
-
+ */
 .about__paragraph {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 30px;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }

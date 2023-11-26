@@ -71,12 +71,12 @@ function Contact() {
 
   return (
     <main className="contact__main">
-      <title>Contact</title>
+      <title>Kontakt</title>
       <section className="contact__breadcrumbs">
         <article className="contact__back" onClick={backToHome}>
-          HOME{" "}
+          HEM{" "}
         </article>{" "}
-        > Contact
+        > Kontakt
       </section>
       {submitted && (
         <p className="message__submit">
@@ -87,29 +87,29 @@ function Contact() {
         <p className="message__fill">Fyll i alla fält i formuläret!</p>
       )}
       <form className="contact__inputs" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Namn</label>
         <input
           className="contact__input"
           type="text"
           id="name"
           name="name"
-          placeholder="Your name"
+          placeholder="Ditt namn"
           value={name}
           onChange={handleChange}
         />
 
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone">Telefon</label>
         <input
           className="contact__input"
           type="text"
           id="phone"
           name="phone"
-          placeholder="Phone"
+          placeholder="Telefon"
           value={phone}
           onChange={handleChange}
         />
         {showWarningPhone && (
-          <p className="message-phone">Please enter only numbers</p>
+          <p className="message-phone">Fyll i siffror i fältet</p>
         )}
 
         <label htmlFor="e-mail">E-mail</label>
@@ -123,17 +123,17 @@ function Contact() {
           onChange={handleChange}
         />
 
-        <label htmlFor="subject">Subject</label>
+        <label htmlFor="subject">Meddelande</label>
         <textarea
           className="contact__textarea"
           id="subject"
           name="subject"
-          placeholder="Write something.."
+          placeholder="Ditt meddelande"
           value={subject}
           onChange={handleChange}
         />
 
-        <input className="contact__submit" type="submit" value="Submit" />
+        <input className="contact__submit" type="submit" value="Skicka" />
       </form>
     </main>
   );
@@ -141,8 +141,6 @@ function Contact() {
 
 export default Contact;
 
-//större inputs?
-//design p meddelande
 //göra färdigt alla länkar
 //responsivitet
 //portfoliosidan, text och alt + länkar
