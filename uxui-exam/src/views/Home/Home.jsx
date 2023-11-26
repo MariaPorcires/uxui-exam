@@ -26,13 +26,13 @@ function Home() {
         <section className="flex">
           <section className="links">
             <button className="button" onClick={handleAboutMeClick}>
-              ABOUT ME
+              OM MIG
             </button>
             <button className="button" onClick={handlePortfolioClick}>
               PORTFOLIO
             </button>
             <button className="button" onClick={handleContactClick}>
-              CONTACT
+              KONTAKT
             </button>
           </section>
         </section>
@@ -42,6 +42,3 @@ function Home() {
 }
 
 export default Home;
-
-//lägg till alt till varje bild
-//kolla bakgrund alt

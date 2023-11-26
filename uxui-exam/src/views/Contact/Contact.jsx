@@ -144,8 +144,5 @@ export default Contact;
 //göra färdigt alla länkar
 //responsivitet
 //portfoliosidan, text och alt + länkar
-//ändra språk?
-//ändra about me sidan, designen
 //video
-//contact me länk på about sidan(inte endast contact) samt annan färg
 //spara alla värden från input i state - för att ha kvar dem om man reloadar etc
