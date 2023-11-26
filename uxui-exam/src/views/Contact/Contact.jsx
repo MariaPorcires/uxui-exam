@@ -123,6 +123,7 @@ function Contact() {
           type="text"
           id="name"
           name="name"
+          aria-label="Fyll i ditt namn här"
           placeholder="Ditt namn"
           value={name}
           onChange={handleChange}
@@ -134,6 +135,7 @@ function Contact() {
           type="text"
           id="phone"
           name="phone"
+          aria-label="Fyll i ditt telefonnummer här"
           placeholder="Telefon"
           value={phone}
           onChange={handleChange}
@@ -148,6 +150,7 @@ function Contact() {
           type="text"
           id="e-mail"
           name="e-mail"
+          aria-label="Fyll i din e-mail här"
           placeholder="E-mail"
           value={email}
           onChange={handleChange}
@@ -159,11 +162,17 @@ function Contact() {
           id="subject"
           name="subject"
           placeholder="Ditt meddelande"
+          aria-label="Skriv ditt meddelande här"
           value={subject}
           onChange={handleChange}
         />
 
-        <input className="contact__submit" type="submit" value="Skicka" />
+        <input
+          className="contact__submit"
+          aria-label="skicka meddelande"
+          type="submit"
+          value="Skicka"
+        />
       </form>
     </main>
   );

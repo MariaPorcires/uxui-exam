@@ -25,13 +25,25 @@ function Home() {
         </section>
         <section className="flex">
           <section className="links" role="navigation">
-            <button className="button" onClick={handleAboutMeClick}>
+            <button
+              className="button"
+              aria-label="om mig"
+              onClick={handleAboutMeClick}
+            >
               OM MIG
             </button>
-            <button className="button" onClick={handlePortfolioClick}>
+            <button
+              className="button"
+              aria-label="portfolio"
+              onClick={handlePortfolioClick}
+            >
               PORTFOLIO
             </button>
-            <button className="button" onClick={handleContactClick}>
+            <button
+              className="button"
+              aria-label="kontakt"
+              onClick={handleContactClick}
+            >
               KONTAKT
             </button>
           </section>
