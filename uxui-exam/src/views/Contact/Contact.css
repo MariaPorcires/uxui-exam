@@ -7,6 +7,16 @@
   align-items: center;
 }
 
+.contact__breadcrumbs {
+  display: flex;
+  font-family: "Inknut Antiqua", serif;
+}
+
+.contact__back {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
 .contact__inputs {
   font-family: "Inknut Antiqua", serif;
   background-color: #f2f2f2;
@@ -18,12 +28,7 @@
   justify-content: center;
   line-height: 1.5;
   padding: 3rem;
-  margin: 1rem;
-}
-
-.contact__text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  margin-top: 5rem;
 }
 
 .contact__input {
@@ -65,4 +70,17 @@
   background-color: #f2f2f2;
   border: 1px solid black;
   color: black;
+}
+
+.message__submit {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-bottom: -2.4rem;
+}
+
+.message__fill {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-bottom: -2.4rem;
+  text-decoration: underline;
 }

@@ -1,14 +1,17 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Contact.css";
-import { useState } from "react";
-import { useEffect } from "react";
 
 function Contact() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [showWarningPhone, setShowWarningPhone] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const regex = /^[0-9\b]+$/;
@@ -39,6 +42,7 @@ function Contact() {
     ) {
       console.log("Form submitted:", { name, phone, email, subject });
       setShowWarning(false);
+      setSubmitted(true);
     } else {
       setShowWarning(true);
       console.log("Please fill in all fields.");
@@ -53,23 +57,36 @@ function Contact() {
       console.log(message);
       return message;
     };
-    window.onbeforeunload = function () {
-      return "Are you sure you want to leave?";
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
+
+  function backToHome() {
+    navigate("/");
+  }
 
   return (
     <main className="contact__main">
       <title>Contact</title>
-      HOME > Contact
-      <p className="contact__text">Contact me for more information.</p>
+      <section className="contact__breadcrumbs">
+        <article className="contact__back" onClick={backToHome}>
+          HOME{" "}
+        </article>{" "}
+        > Contact
+      </section>
+      {submitted && (
+        <p className="message__submit">
+          Tack för ditt meddedlande! Jag hör av mig så snart som möjligt!
+        </p>
+      )}
+      {showWarning && (
+        <p className="message__fill">Fyll i alla fält i formuläret!</p>
+      )}
       <form className="contact__inputs" onSubmit={handleSubmit}>
-        {/* {showWarning && (
-          <p className="message-fill">
-            Please fill in all fields before submitting the form.
-          </p>
-        )} */}
-
         <label htmlFor="name">Name</label>
         <input
           className="contact__input"
@@ -118,17 +135,19 @@ function Contact() {
 
         <input className="contact__submit" type="submit" value="Submit" />
       </form>
-      {showWarning && (
-        <p className="message-fill">
-          Please fill in all fields before submitting the form.
-        </p>
-      )}
     </main>
   );
 }
 
 export default Contact;
 
-//skicka vidare till thank you sida
-
+//större inputs?
+//design p meddelande
+//göra färdigt alla länkar
+//responsivitet
+//portfoliosidan, text och alt + länkar
+//ändra språk?
+//ändra about me sidan, designen
+//video
+//contact me länk på about sidan(inte endast contact) samt annan färg
 //spara alla värden från input i state - för att ha kvar dem om man reloadar etc
