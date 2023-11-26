@@ -72,8 +72,8 @@ function Contact() {
   return (
     <main className="contact__main">
       <title>Kontakt</title>
-      <section className="contact__breadcrumbs">
-        <article className="contact__back" onClick={backToHome}>
+      <section className="breadcrumbs">
+        <article className="breadcrumbs__back" onClick={backToHome}>
           HEM{" "}
         </article>{" "}
         > Kontakt

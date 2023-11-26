@@ -9,11 +9,11 @@
 
 .about__container {
   border: 1px solid black;
-
   font-family: Arial, Helvetica, sans-serif;
   max-width: 600px;
   padding: 2rem;
   border-radius: 2rem;
+  margin-top: 1rem;
 }
 
 .about__video {
@@ -41,14 +41,13 @@
   color: black;
 }
 
-/* .about__text {
-  grid-column: auto / span 2;
-  margin-top: 1rem;
-  font-size: 20px;
-}
- */
 .about__paragraph {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 30px;
   margin-top: 1rem;
+}
+
+.contact__link {
+  cursor: pointer;
+  text-decoration: underline;
 }

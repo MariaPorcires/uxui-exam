@@ -7,12 +7,12 @@
   align-items: center;
 }
 
-.contact__breadcrumbs {
+.breadcrumbs {
   display: flex;
   font-family: "Inknut Antiqua", serif;
 }
 
-.contact__back {
+.breadcrumbs__back {
   margin-right: 0.5rem;
   cursor: pointer;
 }

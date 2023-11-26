@@ -1,22 +1,44 @@
 import "./About.css";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
+
+  function backToHome() {
+    navigate("/");
+  }
+
+  function contact() {
+    navigate("/contact");
+  }
+
   return (
     <main className="about">
       <title>About me</title>
-      <p>HOME > About me</p>
+      <section className="breadcrumbs">
+        <article className="breadcrumbs__back" onClick={backToHome}>
+          HEM{" "}
+        </article>{" "}
+        > Om mig
+      </section>
       <section className="about__container">
         <h1 className="about__title">Mary</h1>
-        <h2 className="about__undertitle">Hobbyphotographer</h2>
+        <h2 className="about__undertitle">Hobbyfotograf</h2>
         <p className="about__paragraph">
-          I am Mary from Gothenburg, Sweden. I have always had a passion for
-          photography, ever since I was a child.<br></br>I have no education in
-          photography but have only had it as a hobby.<br></br>
-          <br></br>
-          If you want to know more about me and what I do, or if you need a
-          photographer, feel free to contact me and we can arrange something.
+          Mitt namn är Mary, jag är från Göteborg och kallar mig själv för
+          hobbyfotograf. Jag har fotograferat hela mitt liv. Jag har en
+          förkärlek till det analoga och mörkrumsarbete men har på senare tid
+          försökt förhålla mig till den digitala världen. Jag fotograferar allt
+          från porträtt, bröllop till natur, djur etc. Konstfoto ligger dock mig
+          varmt om hjärtat.
         </p>
-        Contact
+        <p className="about__paragraph">
+          Är du intresserad av att göra ett projekt, samarbeta eller är du bara
+          i behov av en fotograf så är du välkommen att kontakta mig.
+        </p>
+        <article className="contact__link" onClick={contact}>
+          KONTAKT{" "}
+        </article>{" "}
       </section>
 
       <section className="about__imgcontainer">
